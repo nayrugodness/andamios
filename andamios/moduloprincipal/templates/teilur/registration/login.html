@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ingreso al sistema</title>
+     {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link href="{% static 'teilur/img/favicon.png' %}" rel="shortcut icon">
+    <link href="{% static 'teilur/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+    <link href="{% static 'teilur/bower_components/select2/dist/css/select2.min.css' %}" rel="stylesheet">
+    <link href="{% static 'teilur/bower_components/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+    <link href="{% static 'teilur/bower_components/dropzone/dist/dropzone.css' %}" rel="stylesheet">
+    <link href="{% static 'teilur/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'teilur/bower_components/fullcalendar/dist/fullcalendar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'teilur/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'teilur/bower_components/slick-carousel/slick/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'teilur/css/main.css' %}" rel="stylesheet">
+      {% endblock %}
+</head>
+<body>
+    {% load crispy_forms_tags %}
+    <br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-3">
+                <div class="card" style="height:70vh;">
+                    <div class="card-body">
+                        <h2>Ingresar tus credenciales</h2>
+                        <hr>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <br><br>
+                            <a href="{% url 'homeInvestor' %}">Llevame al home</a>
+                            <br>
+                            <a href="{% url 'userRegister' %}">Registrarme</a>
+                            <br>
+                            <input type="submit" value="ingresar" class="btn btn-success float-right">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

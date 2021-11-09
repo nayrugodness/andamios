@@ -1,0 +1,38 @@
+{% extends 'teilur/base.html' %}
+{% block header %}
+{% endblock %}
+{% block section %}
+
+{% load crispy_forms_tags %}
+<br></br>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+
+            <div class="card">
+                    <div class="card-body">
+                        <h2 style="text-align:center;">Nuevo andamio</h2>
+                        <hr>
+                        <form action="" method="post" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <hr>
+                            <div class="d-flex justify-content-end">
+                                <input type="reset" value="Cancelar" class="btn btn-secondary" style="background-color: grey; color: white; padding-left:10%; padding-right:10%;">
+                                &nbsp;
+                                <input type="submit" value="Guardar" class="btn btn-primary" style="background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); color: white; padding-left:30%; padding-right: 30%;">
+                            </div>
+
+                    </form>
+                    {{ mensaje }}
+            </div>
+        </div>
+
+    </div>
+</div>
+<br></br>
+
+{% endblock %}
+{% block productos %}
+
+{% endblock %}

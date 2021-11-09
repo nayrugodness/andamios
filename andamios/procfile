@@ -1,0 +1,1 @@
+web: gunicorn andamios.wsgi --log-file -
