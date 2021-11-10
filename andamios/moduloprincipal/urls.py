@@ -1,9 +1,9 @@
 from django.urls import path, include
-from .views import home, cliente, eliminarandamio, agregarandamio, listarandamios, usuariocreacion, ClienteViewset, AndamioViewset, modificarandamio, AlquilerViewset
+from .views import home, eliminarandamio, agregarandamio, listarandamios, usuariocreacion, cliente, ClienteViewset, modificarandamio, AlquilerViewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'andamio', AndamioViewset)
+
 router.register(r'alquiler', AlquilerViewset)
 router.register(r'cliente', ClienteViewset)
 
@@ -11,6 +11,7 @@ router.register(r'cliente', ClienteViewset)
 
 urlpatterns = [
     path('', home, name="home"),
+    path('cliente/', cliente, name="cliente"),
     path('usuario/', usuariocreacion, name="usuario"),
     path('agregar-andamio/', agregarandamio, name="agregarandamio"),
     path('listar-andamio/', listarandamios, name="listarestablecimientos"),

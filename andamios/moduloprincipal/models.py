@@ -57,6 +57,7 @@ class Cliente(models.Model):
 
 
 class Alquiler(models.Model):
+    code = models.IntegerField()
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
     andamio = models.ForeignKey(Andamio, on_delete=models.PROTECT)
     cantidadlotes = models.IntegerField()
@@ -64,4 +65,4 @@ class Alquiler(models.Model):
     fechareserva = models.DateField()
 
     def __str__(self):
-        return self.cliente, self.andamio
+        return self.code

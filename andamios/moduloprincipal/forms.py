@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, User
 from .validators import MaxSizeFileValidator
 from django.forms import ValidationError
 from django import forms
@@ -27,10 +27,9 @@ class AndamioForm(forms.ModelForm):
         model = Andamio
         fields = '__all__'
 
-
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
-        model = UserCreationForm
+        model = User
         fields = ["username", "first_name", "last_name", "email", "password1", "password2"]
 
 

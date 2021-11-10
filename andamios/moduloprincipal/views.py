@@ -1,18 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Andamio, Alquiler, Cliente
-from .forms import AlquilerForm, AndamioForm, ClienteForm, CustomUserCreationForm
+from .models import Alquiler, Cliente, Andamio
+from .forms import ClienteForm, AndamioForm, CustomUserCreationForm
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import Http404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
 from rest_framework import serializers, viewsets
-from .serializers import AndamioSerializer, AlquilerSerializer, ClienteSerializer
+from .serializers import AlquilerSerializer, AndamioSerializer, ClienteSerializer
 
 
-class AndamioViewset(viewsets.ModelViewSet):
-    queryset = Andamio.objects.all()
-    serializer_class = AndamioSerializer
 
 class AlquilerViewset(viewsets.ModelViewSet):
     queryset = Alquiler.objects.all()
@@ -77,7 +74,7 @@ def usuariocreacion(request):
     return render(request, 'teilur/registration/register.html', data)
 
 
-@permission_required('mariam.add_establecimiento')
+@permission_required('moduloprincipal.add_establecimiento')
 def agregarandamio(request):
     data = {
         'form': AndamioForm()
@@ -132,6 +129,6 @@ def modificarandamio(request, id):
 @permission_required('moduloprincipal.delete_andamio')
 def eliminarandamio(request, id):
     andamio = get_object_or_404(Andamio, id=id)
-    Andamio.delete()
+    andamio.delete()
     messages.success(request, "Andamio eliminado correctamente")
     return redirect(to="listarandamios")

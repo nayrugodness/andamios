@@ -2,9 +2,174 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Andamios AXS</title>
+    {% load static %}
+    <link rel="shortcut icon" href="https://img.icons8.com/cotton/64/000000/pencil--v2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- all the styles of the page -->
+    {% block css %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'teilur/css/styles.css' %}">
+    {% endblock %}
 </head>
 <body>
+    <!---botón de ir arriba -->
+    <div class="go-top">
+        <span><i class="fas fa-angle-up"></i></span>
+    </div>
 
+
+    <!--- the navegation menu -->
+    <header id="header">
+        <div class="quew-arriba"></div>
+        <nav class="menu">
+            <div class="logo-box">
+                <h1><img src="https://img.icons8.com/cotton/64/000000/pencil--v2.png"></h1>
+                <span class="btn-menu">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </div>
+            <div class="list-container">
+                <ul class="lists">
+                    <li><a href="{% url 'usuario' %}" class="active">Regístrate</a></li>
+                    <li><a href="{% url 'cliente' %}">Services</a>Ingresa</li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--- IMG header  -->
+
+        <div class="img-header" style="background-image: url({% static 'teilur/img/background.jpg' %});">
+            <div class="welcome">
+
+                <h1>Welcome to web creativity</h1>
+                <hr>
+                <p>We're web fullstack web designers watch our portfolios</p>
+                <button id="abajo">look more</button>
+            </div>
+        </div>
+
+        <div class="squew-abajo"></div>
+    </header>
+
+    <!---- the navigation menu -->
+<main>
+
+
+    <!--- Acerce de nosotros  -->
+    <section class="acerca-de-nosotros">
+        <div class="info-container">
+            <h1>About us</h1>
+            <p>Web creativity's senior design & development team have earned international recognition and numerous high profile awards over the past ten years by developing outstanding websites for clients across the world.
+
+                Our broad experience and understanding of both commercial platforms and open source frameworks provide the versatility to select solutions that map perfectly onto your specific requirements and get the maximum return on your investment.
+
+                Working closely with your team at every stage to understand your scope, timeline and budget we always deliver the highest possible standard of responsive UX & design; driving sales and extending your international reach & reputation.</p>
+             <div class="about-gallery">
+                <img src="{% static 'teilur/img/nosotros1.jpg' %}" alt="nosotros">
+                <img src="{% static 'teilur/img/nosotros2.jpg' %}" alt="nosotros">
+                <img src="{% static 'teilur/img/nosotros3.jpg' %}" alt="nosotros">
+
+            </div>
+            <div class="about-more">
+                <button>Read more </button>
+            </div>
+        </div>
+    </section>
+    <!--- About our proyects  -->
+    <section class="our-projects">
+        <div class="deg-background"></div>
+        <div class="ejezproject">
+            <div class="container-project">
+                <div class="project-title">
+                    <h2>Our projects </h2>
+                    <hr>
+                </div>
+                <div class="project-img">
+                    <img src="{% static 'teilur/img/web1.jpg' %}" alt="">
+                    <img src="{% static 'teilur/img/web2.jpg' %}" alt="">
+                    <img src="{% static 'teilur/img/web3.jpg' %}" alt="">
+                    <img src="{% static 'teilur/img/web4.jpg' %}" alt="">
+                    <img src="{% static 'teilur/img/web5.jpg' %}" alt="">
+                    <img src="{% static 'teilur/img/web6.jpg' %}" alt="">
+
+                </div>
+            </div>
+        </div>
+    </section>
+   <!--  Testimonios
+   <section class="testimonios">
+       <div class="testimonios-title">
+           <h2>Testimonios</h2>
+           <hr>
+       </div>
+       <div class="box-testimonios">
+
+           <div class="card-testimonios">
+                <div class="card-img"><img src="img/nosotros2.jpg" alt=""></div>
+                <div class="testimonio-text"><h4>Amanda Castillo</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis harum, omnis non error natus placeat reprehenderit quod nihil quidem commodi!</p>
+                </div>
+            </div>
+
+            <div class="card-testimonios">
+                <div class="card-img"><img src="img/nosotros3.jpg" alt=""> </div>
+                <div class="testimonio-text">
+                    <h4>Amanda Castillo</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis harum, omnis non error natus placeat reprehenderit quod nihil quidem commodi!</p>
+
+                </div>
+            </div>
+
+
+       </div>
+   </section>--->
+</main>
+
+
+<!--- FOOTER  -->
+
+<footer class="footer">
+    <div class="deg-footer">
+
+    </div>
+    <div class="ejezfooter" style=" background-image: url({% static 'teilur/img/neon.jpg' %});
+   ">
+        <div class="footer-content">
+            <div class="footer-title">
+                <h2>Contact Form</h2>
+                <hr>
+            </div>
+            <div class="formulario-content">
+                <form action="" id="formulario">
+                    <label for="user">Name: </label>
+                    <input type="text" id="user" name="user" placeholder="write your name">
+
+                    <label for="email">E-mail </label>
+                    <input type="email" id="email" name="email" placeholder="Write your e-mail">
+
+                    <label for="mensaje">Write to us your opinion:  </label>
+                    <textarea name="mensaje" id="mensaje" ></textarea>
+
+                    <div class="send">
+                        <button>Send</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>&copy; Web crativity - 2021 | All rights reserved</p>
+        </div>
+    </div>
+</footer>
+    <!-- all the scripts of the page -->
+    {% block js %}
+    <script src="https://kit.fontawesome.com/68945ecb40.js" crossorigin="anonymous"></script>
+    <script src="{% static 'teilur/js/app.js' %}"></script>
+    {% endblock %}
 </body>
 </html>

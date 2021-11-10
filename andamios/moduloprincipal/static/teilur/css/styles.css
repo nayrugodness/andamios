@@ -1,0 +1,657 @@
+:root{
+    --red:#F556B1;
+    --black:#252a34;
+    --blue:#3DE6F5;
+    --white:#eaeaea;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background: #ffff;
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+}
+/* GO TOP */
+.go-top{
+    position: fixed;
+    bottom: 100px;
+    right: -100%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--red);
+    text-align: center;
+    background: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 400ms;
+    z-index: 9999;
+}
+.go-top:hover{
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    background: var(--red);
+}
+.go-top > span{
+    font-size: 40px;
+    color: var(--black);
+}
+
+/* este es el skew  */
+.squew-abajo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 15vh 100vw;
+    border-style: solid ;
+    border-color:  transparent transparent #fff transparent;
+
+}
+.squew-arriba{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 15vh 100vw 0 0;
+    border-style: solid ;
+    border-color:#ffff  transparent transparent transparent;
+    z-index : 10;
+}
+
+/* FIN GOT TOP*/
+/* MENU DE NAVEGACIÓN */
+#header{
+    position:relative;
+    width: 100%;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+
+}
+.menu .logo-box{
+    margin-left: 20px;
+}
+
+.menu .logo-box h1 a{
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 400;
+    color:var(--black);
+}
+.menu .list-container{
+    margin-right: 20px;
+}
+.menu .list-container .lists{
+    display: flex;
+}
+.menu .list-container .lists li{
+    list-style: none;
+}
+.menu .list-container .lists li a{
+    text-decoration: none;
+    margin: 0px 10px ;
+    padding: 8px;
+    color: var(--black);
+    border-radius: 24px;
+    font-size: 16px;
+    transition: 0.3s;
+
+}
+.menu .list-container .lists li a.active{
+    background: var(--red);
+    color:#ffff;
+}
+.menu .list-container .lists li a:hover{
+    background: var(--red);
+    color:#ffff;
+}
+.btn-menu > .fa-bars{
+    display: none;
+
+}
+/* FIN DEL MENÚ DE NAVEGACIÓN */
+
+/* IMG DEL HEADER*/
+.img-header{
+    position:relative;
+    width: 100vw;
+    height: 100vh;
+    /*background-image: url("C:/Users/nayru alexandra/OneDrive/Escritorio/Nueva carpeta/proyectonuevoplantilla/img/background.jpg");
+    */background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.img-header .welcome{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.img-header .welcome h1{
+    font-size: 50px;
+    color: #ffff;
+    font-weight: 200;
+}
+.img-header .welcome hr{
+    width: 400px;
+    height: 2px;
+    background: #ffff;
+    border: none;
+    margin-top: 5px;
+}
+.img-header .welcome p{
+    font-size: 20px;
+    color: #ffff;
+    margin-top: 20px;
+
+}
+.img-header .welcome > button{
+    width: 170px;
+    height: 40px;
+    background: var(--red);
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #ffff;
+    text-align: center;
+    margin-top: 20px;
+    cursor:pointer;
+    transition: 0.5s;
+}
+.img-header .welcome > button:hover{
+    background: var(--blue);
+}
+/* FIN IMG DEL HEADER */
+
+/*  A C E R C A  D E  N O S O T R O S   */
+.acerca-de-nosotros{
+    width: 100vw;
+    margin-top: 120px;    
+}
+.acerca-de-nosotros .info-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.acerca-de-nosotros .info-container h1{
+    font-size: 50px;
+    font-weight: 400;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.acerca-de-nosotros .info-container p{
+    text-align: center;
+    font-size: 17px;
+    color: var(--black);
+    line-height: 35px;
+
+}
+.acerca-de-nosotros .info-container .about-gallery{
+    width: 100%;
+    display: flex;
+    margin: 50px 0px;
+}
+.acerca-de-nosotros .info-container .about-gallery img{
+    width: calc(33.33% - 10px);
+    height: 300px;
+    object-fit: cover;
+    margin: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.acerca-de-nosotros .info-container .about-more{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.acerca-de-nosotros .info-container .about-more button{
+    width: 170px;
+    height: 40px;
+    background: var(--red);
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #ffff;
+    text-align: center;
+    margin-top: 20px;
+    cursor:pointer;
+    transition: 0.5s;
+}
+.acerca-de-nosotros .info-container .about-more button:hover{
+    background: var(--blue);
+}
+
+/* F I N  A C E R C A  D E  N O S O T R O S */
+
+/* N U E S T R O S  P R O D U C T O S*/
+
+.our-projects{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:rgb(255, 225, 225);
+    background-attachment:fixed ;
+    background-position: center;
+    background-size: cover;
+    margin-top: 100px;
+}
+.our-projects .deg-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(116, 116, 116, 0.6);
+}
+.our-projects .ejezproject{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+.our-projects .container-project{
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    
+}
+.our-projects .container-project .project-title{
+
+    border: 2px solid #ffff;
+    padding: 15px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    
+
+}
+.our-projects .container-project .project-title h2{
+    font-size: 40px;
+    color: #ffff;
+    font-weight: normal;
+}
+.our-projects .container-project .project-title hr{
+    background: #ffff;
+    width: 60%;
+    margin: 10px auto;
+}
+.our-projects .container-project .project-img{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px;
+    padding-bottom: 100px;
+}
+.our-projects .container-project .project-img img{
+    width: calc(30% - 10px);
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+/* FIN DE PROYECTOS */
+/* TESTIMONIOS INICIO */
+
+.testimonios{
+    width: 100%;
+    margin-top: 120px;
+}
+.testimonios .testimonios-title{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+.testimonios .testimonios-title h2{
+    font-size: 50px;
+    color: var(--black);
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.testimonios .testimonios-title hr{
+    width: 60%;
+    margin: auto;
+    height: 3px;
+    background: var(--black);
+    border: 3px;
+}
+.testimonios .box-testimonios{
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.testimonios .box-testimonios .card-testimonios{
+    width: 45%;
+    margin: 20px;   
+}
+.testimonios .box-testimonios .card-testimonios .card-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.testimonios .box-testimonios .card-testimonios .card-img img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.testimonios .box-testimonios .card-testimonios .testimonio-text{
+    width: 100%;
+    border: 2px solid var(--red);
+    padding: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.testimonios .box-testimonios .card-testimonios .testimonio-text h4{
+    color: var(--red);
+    font-weight: normal;
+    font-size: 27px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.testimonios .box-testimonios .card-testimonios .testimonio-text p{
+    font-size: 15px;
+    color: var(--black);
+    text-align: center;
+    height: 35px;
+    transition: 200ms;
+}
+.testimonios .box-testimonios .card-testimonios .testimonio-text:hover{
+    border: 2px solid var(--blue);
+}
+.testimonios .box-testimonios .card-testimonios .testimonio-text:hover h4{
+    color: var(--blue);
+}
+
+/* E S T E   E S   E L   F O O T E R   */
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:pink;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.footer .deg-footer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background:rgba(0,0,0,0.6);
+}
+.footer .ejezfooter{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /*background-image: url("C:/Users/nayru alexandra/OneDrive/Escritorio/Nueva carpeta/proyectonuevoplantilla/img/neon.jpg");
+    */
+    
+    
+}
+.footer .footer-content{
+    width: 90%;
+    padding-top: 100px;
+    margin: auto;
+}
+.footer .footer-content .footer-title{
+    width: 60%;
+    margin: auto;
+    border: 2px solid #ffff;
+    border-radius: 24px;
+    padding: 20px;
+
+}
+.footer .footer-content .footer-title h2{
+    color: #ffff;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+}
+.footer .footer-content .footer-title hr{
+    width: 80%;
+    margin: auto;
+}
+.footer .footer-content .formulario-content{
+    width: 60%;
+    background:#ffff;
+    border-radius: 20px;
+    border: 2px var(--red) solid;
+    margin: 50px auto;
+    padding: 30px;
+    margin-bottom: 150px;
+}
+.footer .footer-content .formulario-content #formulario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer .footer-content .formulario-content #formulario label{
+    text-align: center;
+    color: var(--black);
+    font-size: 22px;
+    margin: 30px 0px 10px 0px;
+}
+.footer .footer-content .formulario-content #formulario input{
+    width: 80%;
+    margin: auto;
+    border: 2px solid var(--red);
+    border-radius: 24px;
+    outline: none;
+    height: 35px;
+    text-align: center;
+    padding: 8px;
+    font-size: 17px;
+    color: var(--black);
+}
+.footer .footer-content .formulario-content #formulario textarea{
+    width: 80%;
+    margin: auto;
+    border: 2px solid var(--red);
+    border-radius: 24px;
+    outline: none;
+    height: 65px;
+    text-align: center;
+    padding: 8px;
+    font-size: 15px;
+    color: var(--black);
+}
+.footer .footer-content .formulario-content #formulario .send{
+    width: 100%;
+    display: flex;
+    margin: 30px auto;
+    justify-content: center;
+}
+.footer .footer-content .formulario-content #formulario .send button{
+    width: 80%;
+    height: 40px;
+    background: var(--red);
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #ffff;
+    text-align: center;
+    margin-top: 20px;
+    cursor:pointer;
+    transition: 0.5s;
+}
+.footer .footer-content .formulario-content #formulario .send button:hover{
+     background: var(--blue);
+}
+.footer-text{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background: var(--black);
+    color: #ffff;
+    padding: 20px;
+    font-size: 30px;
+}
+
+/* fin del footer */
+
+/*inicio de los media queries*/
+@media only screen and (max-width:900px){
+    .btn-menu > .fa-bars{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 28px;
+    }
+    .btn-menu > .fa-bars:hover{color:var(--red);}
+    .btn-menu > .fa-times{color:var(--red);}
+    .menu .list-container{
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: #ffff;
+    }
+    .menu .list-container .lists{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top: 5px solid var(--red) ;
+    }
+    .menu .list-container .lists li{
+        width: 90%;
+        margin: 10px 10px;
+        padding: 15px;
+        
+        text-align: center;
+        justify-content: space-evenly;
+        
+    }
+    .menu .list-container .lists li a{
+        font-size: 25px;
+    }
+    .menu .list-container .lists li a.active{
+        background:none;
+        color: var(--red);
+    }
+    .menu .list-container .lists li a:hover{
+        background:none;
+        color: var(--blue);
+    }
+}
+
+@media only screen and (max-width: 773px){
+    /*IMG HEADER*/
+    .img-header .welcome h1{
+        font-size: 30px;
+        
+    }
+    .img-header .welcome > button{
+        width: 130px;
+        font-size: 15px;
+    }
+    /*ACERCA DE NOSOTROS */
+    .acerca-de-nosotros .info-container .about-gallery{
+        flex-direction: column;
+        
+    }
+    .acerca-de-nosotros .info-container .about-gallery img{
+        width: 100%;
+    }
+    /*  N U E S T R O S   P R O Y E C T O S  */
+
+    .our-projects .container-project .project-img{
+        width: 100%;
+    }
+    .our-projects .container-project .project-img img{
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+@media only screen and (max-width: 590px){
+    /*IMG HEADER*/
+
+    .img-header .welcome h1{
+        font-size: 30px;
+    }
+    .img-header .welcome hr{
+        width: 80%;
+    }
+    .img-header .welcome p{
+        font-size: 15px;
+    }
+    .img-header .welcome > button{
+        width: 100px;
+        font-size: 17px;
+    }
+    .our-projects .container-project{
+        width: 80%;
+        margin: auto;
+        margin-top: 100px;
+        
+    }
+    .our-projects .container-project .project-title{
+    
+        border: 1px solid #ffff;
+        padding: 9px;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        
+    
+    }
+    .our-projects .container-project .project-title h2{
+        font-size: 20px;
+        color: #ffff;
+        font-weight: normal;
+    }
+    .our-projects .container-project .project-title hr{
+        background: #ffff;
+        width: 70%;
+        margin: 10px auto;
+    }
+    .testimonios .box-testimonios .card-testimonios{
+        width: 100%;
+        margin: 20px;   
+    }
+    .footer .footer-content .formulario-content{
+        width: 100%;
+    }
+    .footer-text{
+        font-size: 20px;
+    }
+}

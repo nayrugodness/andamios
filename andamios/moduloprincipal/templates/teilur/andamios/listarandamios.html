@@ -11,12 +11,11 @@
         <table class="table table-striped table-hover table-responsive">
 
             <tr>
-                <th>Nombre</th>
-                <th>Telefono</th>
-                <th>Departamento</th>
-                <th>Ciudad</th>
-                <th>Abierto</th>
-                <th>¿Vas a modificarlo?</th>
+                <th>Nombre lote</th>
+                <th>Cantidad disponible</th>
+                <th>Tipo de andamio </th>
+                <th>Valor alquiler por hora</th>
+
             </tr>
 
             {% for e in entity %}
@@ -26,7 +25,6 @@
                 <td>{{ e.cantidadtotal | title }}</td>
                 <td>{{ e.tipoandamio | title }}</td>
                 <td>{{ e.valorhora | title }}</td>
-
 
                 <td>
                     <a href="{% url 'modificarandamio' e.id%}" class="btn btn-info">Modificar</a>
